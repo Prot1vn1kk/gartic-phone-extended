@@ -3,7 +3,7 @@ name: Deploy UserScript to GitHub Pages
 on:
   push:
     branches:
-      - main # или master, в зависимости от вашей основной ветки
+      - master
 
 jobs:
   build-and-deploy:
