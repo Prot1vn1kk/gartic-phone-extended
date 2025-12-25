@@ -11,6 +11,8 @@
 // @grant        GM_xmlhttpRequest
 // @grant        unsafeWindow
 // @run-at       document-start
+// @downloadURL  https://raw.githubusercontent.com/prot1vn1kk/gartic-phone-extended/main/dist/gartic-extended.user.js
+// @updateURL    https://raw.githubusercontent.com/prot1vn1kk/gartic-phone-extended/main/dist/gartic-extended.user.js
 // ==/UserScript==
 
 import { modulesManager } from './Core/ModulesManager';
