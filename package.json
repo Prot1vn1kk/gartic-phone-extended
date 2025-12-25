@@ -1,6 +1,7 @@
 {
     "name": "gartic-phone-extended",
     "version": "1.0.0",
+    "type": "module",
     "description": "Userscript for Gartic Phone",
     "main": "src/main.js",
     "scripts": {
