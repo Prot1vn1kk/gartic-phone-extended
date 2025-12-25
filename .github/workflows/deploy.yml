@@ -1,0 +1,40 @@
+name: Deploy UserScript to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # или master, в зависимости от вашей основной ветки
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # для gh-pages
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Укажите вашу версию Node.js
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: node build.js
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

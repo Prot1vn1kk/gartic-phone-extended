@@ -1,0 +1,14 @@
+{
+    "name": "gartic-phone-extended",
+    "version": "1.0.0",
+    "description": "Userscript for Gartic Phone",
+    "main": "src/main.js",
+    "scripts": {
+        "build": "node build.js"
+    },
+    "author": "VibeCoder",
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "esbuild": "^0.27.2"
+    }
+}
