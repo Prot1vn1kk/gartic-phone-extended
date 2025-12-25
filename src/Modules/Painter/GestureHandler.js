@@ -4,6 +4,8 @@
  * @module GestureHandler
  */
 
+export { createGestureHandler };
+
 /**
  * @typedef {Object} GestureHandlerOptions
  * @property {function(Object): void} onStart - Колбэк, вызываемый в начале жеста. Принимает объект с начальным состоянием.
@@ -403,7 +405,3 @@ function createGestureHandler(options) {
     };
 }
 
-// Экспорт для использования в других модулях
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = createGestureHandler;
-}

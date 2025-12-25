@@ -25,23 +25,20 @@ import { renderSettingsButton, renderSettingsModal } from './UI/Settings.js';
     async function main() {
         console.log('🚀 Gartic Phone Extended Loaded');
 
-        // Инъекция глобальных стилей
         injectStyles(GLOBAL_STYLES);
 
-        // Создание и регистрация модуля Painter
         const painterModule = createPainterModule();
         modulesManager.register('Painter', painterModule);
 
-        // Создание и регистрация модуля Timelapse
         const timelapseModule = createTimelapseModule();
         modulesManager.register('Timelapse', timelapseModule);
 
-        // Рендеринг UI настроек
-        renderSettingsButton();
-        renderSettingsModal();
-
-        // Инициализация всех включенных модулей
+        // Инициализация всех модулей ДО рендеринга UI
         await modulesManager.initAll();
+
+        // Рендеринг UI после инициализации модулей
+        await renderSettingsButton();
+        renderSettingsModal();
     }
 
     main();
